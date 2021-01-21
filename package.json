@@ -1,9 +1,9 @@
 {
   "name": "jitsi-meet-electron",
-  "version": "1.0.0",
-  "description": "ZNYR Student App",
+  "version": "1.1.0",
+  "description": "ZNYR STUDENT",
   "main": "./build/main.js",
-  "productName": "ZNYR Student App",
+  "productName": "ZNYR STUDENT",
   "scripts": {
     "start": "webpack --config ./webpack.main.js --mode development && concurrently \"npm:watch\" \"electron ./build/main.js\"",
     "clean": "rm -rf node_modules build dist",
@@ -26,7 +26,7 @@
   },
   "build": {
     "appId": "com.znyr.education",
-    "productName": "ZNYR Student",
+    "productName": "ZNYR STUDENT",
     "copyright": "Copyright © 2020 ZNYR",
     "generateUpdatesFilesForAllChannels": true,
     "files": [
@@ -42,8 +42,16 @@
       "license": "app/license.txt"
     },
     "win": {
-      "icon": "./Znyr.jpg",
-      "target": "nsis"
+      "icon": "./znyrimage.jpg",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
     },
     "linux": {
       "target": [
